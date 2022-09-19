@@ -17,7 +17,6 @@ echo "# Starting installing node services..."
 # Installing node services
 sudo apt install nodejs
 sudo apt install npm
-sudo apt install iptables-persistant
 
 echo "# Finished installing node services."
 echo "# Starting nodeservice configuration..."
