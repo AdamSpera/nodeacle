@@ -1,0 +1,21 @@
+[Unit]
+Description=Node.js Server
+#Requires=After=mysql.service       # Requires the mysql service to r>
+
+[Service]
+ExecStart=/usr/bin/node /home/ubuntu/nodeacle/index.js
+# Required on some systems
+WorkingDirectory=/home/ubuntu/nodeacle/ 
+Restart=always
+# Restart service after 5 seconds if node service crashes
+RestartSec=5
+# Output to syslog
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=nodejs-example
+#User=<alternate user>
+#Group=<alternate group>
+#Environment=NODE_ENV=production PORT=1337
+
+[Install]
+WantedBy=multi-user.target
