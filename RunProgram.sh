@@ -31,9 +31,9 @@ echo 'Description=Node.js Server' >> nodeserver.service
 echo '#Requires=After=mysql.service       # Requires the mysql service to r>' >> nodeserver.service
 echo '' >> nodeserver.service
 echo '[Service]' >> nodeserver.service
-echo "ExecStart=/usr/bin/node `realpath "$filename"`" >> nodeserver.service
+echo "ExecStart=/usr/bin/node /home/ubuntu/$foldername/$filename" >> nodeserver.service
 echo '# Required on some systems' >> nodeserver.service
-echo "WorkingDirectory=`realpath " "`" >> nodeserver.service
+echo "WorkingDirectory=/home/ubuntu/$foldername" >> nodeserver.service
 echo 'Restart=always' >> nodeserver.service
 echo '# Restart service after 5 seconds if node service crashes' >> nodeserver.service
 echo 'RestartSec=5' >> nodeserver.service
@@ -49,7 +49,7 @@ echo '[Install]' >> nodeserver.service
 echo 'WantedBy=multi-user.target' >> nodeserver.service
 
 # Update the nodeservice path
-sudo cp /home/ubuntu/$foldername/nodeserver.service /etc/systemd/system/
+sudo cp /home/ubuntu/nodeacle/nodeserver.service /etc/systemd/system/
 
 echo "# Finished nodeservice configuration."
 echo "# Starting iptable configuration..."
