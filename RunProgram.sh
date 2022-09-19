@@ -1,7 +1,7 @@
 #!/bin/sudo bash
 echo ""
 echo "Welcome to Nodeacle!"
-echo "Enter the name of your current folder file: (ex. myproject)"
+echo "Enter the name of your project folder: (ex. myproject)"
 read foldername
 echo "Enter the name of your primary javascirpt file: (ex. App.js or Index.js)"
 read filename
